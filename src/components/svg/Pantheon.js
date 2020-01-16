@@ -10,6 +10,7 @@ function SvgPantheon(props) {
       xmlSpace="preserve"
       width="1em"
       height="1em"
+      fill="currentColor"
       {...props}
     >
       <style>
