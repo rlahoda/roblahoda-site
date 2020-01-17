@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Use 'const', Even When You Think You Shouldn't
+title: Where is the .npmrc file?
 author: Rob Lahoda
 date: 2016-05-19T16:00:00.000Z
 description: I've been through this a couple times now because I wanted to move my NPM global install location to a new spot where I wasn't constantly dealing with permissions issues and both times it was a bigger hassle than it probably should have been.

@@ -9,22 +9,21 @@
 .aboutCard {
   width: 90%;
   margin: 5px;
-    @include respond-at($bp-small) {
-      width:80%;
-      margin: 15px;
-    }
-    @include respond-at($bp-med) {
-      width:70%;
-      margin: 40px;
-    }
-    @include respond-at($bp-large) {
-      width:70%;
-      margin: 60px;
-    }
-  & > p {
+  @include respond-at($bp-small) {
+    width: 80%;
+    margin: 15px;
+  }
+  @include respond-at($bp-med) {
+    width: 70%;
+    margin: 40px;
+  }
+  @include respond-at($bp-large) {
+    width: 70%;
+    margin: 60px;
+  }
+  & p {
     text-align: justify;
   }
-
 }
 
 .aboutInfoMain {
@@ -38,7 +37,6 @@
 }
 
 .aboutIcon {
-
   text-align: center;
   & > svg {
     width: 40px;
@@ -95,15 +93,15 @@
   }
   @supports (display: grid) {
     @include respond-at($bp-small) {
-      width:100%;
+      width: 100%;
       margin: 5px;
     }
     @include respond-at($bp-med) {
-      width:100%;
+      width: 100%;
       margin: 5px;
     }
     @include respond-at($bp-large) {
-      width:100%;
+      width: 100%;
       margin: 5px;
     }
   }

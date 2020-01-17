@@ -18,17 +18,14 @@
   flex-wrap: wrap;
   justify-content: center;
   @include respond-at($bp-small) {
-    width:50%;
+    width: 50%;
   }
 }
 
 .footerLinks__link--icon {
-
-  & > svg {
-    width: 20px;
-    height: 20px;
-    fill: white;
-  }
+  font-size: 20px;
+  color: white;
+  margin-bottom: 5px;
 }
 
 .footerLinks__link {
