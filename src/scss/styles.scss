@@ -8,6 +8,7 @@ $bp-xsmall: 600px;
 $bp-small: 780px;
 $bp-med: 1060px;
 $bp-large: 1400px;
+$bp-xlarge: 1925px;
 
 // $cardColor1: #d2beb3;
 // $cardColor2: #7bb6d0;
@@ -29,6 +30,61 @@ $cardColor3: #ff98a1;
 $cardColor4: #7ad19c;
 $cardColor5: #ffef67;
 $cardColor6: #ffac67;
+
+$text-screen-min-width: 1000px;
+$text-screen-max-width: 1950px;
+
+$fluid-type-extra-large-size--max: 22px;
+$fluid-type-extra-large-size--min: 18px;
+$fluid-type-large-size--max: 19px;
+$fluid-type-large-size--min: 16px;
+$fluid-type-med-size--max: 16px;
+$fluid-type-med-size--min: 12px;
+$fluid-type-med-small-size--max: 14px;
+$fluid-type-med-small-size--min: 10px;
+$fluid-type-small-size--max: 12px;
+$fluid-type-small-size--min: 10px;
+$fluid-type-smallest-size--max: 10px;
+$fluid-type-smallest-size--min: 8px;
+
+/* Fluid Typography Mixin - Resizes text based on screen size */
+
+/* Mixin from: https://css-tricks.com/snippets/css/fluid-typography/ */
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+/* Example of Fluid Type Mixin:
+ @include fluid-type(
+    $text-screen-min-width, <- leave the first two values as-is
+    $text-screen-max-width,
+    $fluid-type-large-size--min, <- choose the variable that corresponds to the type of text being sized
+    $fluid-type-large-size--max
+  );
+*/
 
 @import "partials/reset";
 @import "partials/icons";
