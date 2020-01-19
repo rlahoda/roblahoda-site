@@ -167,3 +167,74 @@ collections:
                   },
                 ]
             } 
+      - file: "src/pages/projects/index.md"
+        label: "Projects"
+        name: "projects"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "projects-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: Projects List, 
+              name: projects, 
+              widget: object
+              fields:
+                [
+                  {
+                    label: Title,
+                    name: title,
+                    widget: string
+                  },
+                  {
+                    label: Link Title,
+                    name: linktitle,
+                    widget: string
+                  },
+                  {
+                    label: Link Address,
+                    name: linkaddress,
+                    widget: string
+                  },
+                  {
+                    label: Alert Info,
+                    name: alert,
+                    widget: string
+                  },
+                  {
+                    label: Github Title,
+                    name: githubTitle,
+                    widget: string
+                  },
+                  {
+                    label: Github Address,
+                    name: githubaddress,
+                    widget: string
+                  },
+                  {
+                    label: Width,
+                    name: width,
+                    widget: select,
+                    options: ["wide", "med", "normal"]
+                  },
+                  {
+                    label: Technologies,
+                    name: technology,
+                    widget: select,
+                    multiple: true,
+                    options: ["Atom","Babel","Codepen","Css3","CssGrid","Drupal","Email","Firefox","Flexbox","Git","Github","Greensock","Gulp","Html5","Illustrator","Javascript","Jest","Lando","Leaflet","Linkedin","Netlify","Npm","Pantheon","Paragraphs","PHP","React","Redux","Sass","Slack","Twig","Twitter","UiKit","VsCode","Wordpress","XD"]
+                  },
+                  {
+                    label: Body Content,
+                    name: paragraphs,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Text, name: text, widget: text },
+                      ],
+                  }
+                ]
+            } 

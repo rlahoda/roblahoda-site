@@ -13,7 +13,7 @@ export default class BlogIndexPage extends React.Component {
 
         <main>
           <div class="pageHeading">
-            <h1 class="bigTitle">Blog</h1>
+            <h1 class="bigTitle">BLOG</h1>
             <div class="pageTagline__container">
               <h2 id="projectsTagline" class="pageTagline">
                 Stuff I Write
