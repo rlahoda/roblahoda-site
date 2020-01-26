@@ -1,30 +1,29 @@
 import React from "react";
-
 import Layout from "../../components/Layout";
 import BlogRoll from "../../components/BlogRoll";
 
-export default class BlogIndexPage extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <header>
-          <div class="pageTopImage"></div>
-        </header>
+function BlogIndexPage() {
+  return (
+    <Layout>
+      <header>
+        <div className="pageTopImage"></div>
+      </header>
 
-        <main>
-          <div class="pageHeading">
-            <h1 class="bigTitle">BLOG</h1>
-            <div class="pageTagline__container">
-              <h2 id="projectsTagline" class="pageTagline">
-                Stuff I Write
-              </h2>
-            </div>
-            <p></p>
+      <main>
+        <div className="pageHeading">
+          <h1 className="bigTitle">BLOG</h1>
+          <div className="pageTagline__container">
+            <h2 id="projectsTagline" className="pageTagline">
+              Stuff I Write
+            </h2>
           </div>
+          <p></p>
+        </div>
 
-          <BlogRoll />
-        </main>
-      </Layout>
-    );
-  }
+        <BlogRoll />
+      </main>
+    </Layout>
+  );
 }
+
+export default BlogIndexPage;

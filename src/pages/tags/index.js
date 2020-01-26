@@ -1,44 +1,46 @@
-import React from 'react'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import Layout from '../../components/Layout'
+import React from "react";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import { Link, graphql } from "gatsby";
+import Layout from "../../components/Layout";
 
 const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
-      siteMetadata: { title },
-    },
-  },
+      siteMetadata: { title }
+    }
+  }
 }) => (
   <Layout>
-    <section className="section">
-      <Helmet title={`Tags | ${title}`} />
-      <div className="container content">
-        <div className="columns">
-          <div
-            className="column is-10 is-offset-1"
-            style={{ marginBottom: '6rem' }}
-          >
-            <h1 className="title is-size-2 is-bold-light">Tags</h1>
-            <ul className="taglist">
-              {group.map(tag => (
-                <li key={tag.fieldValue}>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                    {tag.fieldValue} ({tag.totalCount})
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </Layout>
-)
+    <Helmet title={`Tags | ${title}`} />
+    <header>
+      <div className="pageTopImage"></div>
+    </header>
 
-export default TagsPage
+    <main>
+      <div className="pageHeading">
+        <h1 className="bigTitle">TAGS</h1>
+        <div className="pageTagline__container">
+          <h2 id="projectsTagline" className="pageTagline"></h2>
+        </div>
+        <p></p>
+      </div>
+
+      <ul className="blogListContainer noList">
+        {group.map(tag => (
+          <li className="infoCard blogListCard" key={tag.fieldValue}>
+            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+              {tag.fieldValue} ({tag.totalCount})
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </main>
+  </Layout>
+);
+
+export default TagsPage;
 
 export const tagPageQuery = graphql`
   query TagsQuery {
@@ -54,4 +56,4 @@ export const tagPageQuery = graphql`
       }
     }
   }
-`
+`;
