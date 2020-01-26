@@ -1,193 +1,237 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
-
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import React, { useRef, useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
+import gsap from "gsap";
+import { TimelineMax } from "gsap";
+import Layout from "../components/Layout";
+import Features from "../components/Features";
+import BlogRoll from "../components/BlogRoll";
+import IconDisplay from "../components/svg/IconDisplay";
+import Tagline from "../components/Tagline";
 
 export const IndexPageTemplate = ({
-  image,
+  backgrounds,
   title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => (
-  <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
+  heading1,
+  heading2,
+  subheadings,
+  tools,
+  intro
+}) => {
+  let tl = useRef();
+  let tl2 = useRef();
+  // gsap.registerPlugin(TextPlugin, EasePack);
+
+  function toolDisplay() {
+    let toolsArr;
+    if (tools.length > 0) {
+      toolsArr = tools.map((t, index) => {
+        if (t.link) {
+          return (
+            <li className="homepageMain__Technology" key={index}>
+              <a
+                className="homepageMain__Icon"
+                href={t.link}
+                // onclick="trackOutboundLink('{{ tool.link }}'); return false;"
+              >
+                <IconDisplay
+                  className="homepageMain__Icon"
+                  icon={t.icon}
+                ></IconDisplay>
+                <h4>{t.name}</h4>
+              </a>
+            </li>
+          );
+        } else {
+          return (
+            <li className="homepageMain__Technology" key={index}>
+              <span className="homepageMain__Icon">
+                <IconDisplay
+                  className="homepageMain__Icon"
+                  icon={t.icon}
+                ></IconDisplay>
+              </span>
+              <h4>{t.name}</h4>
+            </li>
+          );
+        }
+      });
+    } else {
+      return "";
+    }
+    return toolsArr;
+  }
+
+  function getRandom(min, max) {
+    let randomNumber = Math.floor(Math.random() * (max - min)) + 1;
+    return randomNumber;
+  }
+
+  function boxesHeaderRandom() {
+    tl.current = new TimelineMax();
+    for (var i = 0; i < 10; i++) {
+      let randomId = getRandom(1, 28);
+      let elId = "#nameImage__container--box--" + randomId;
+      tl.current.to(elId, 2, { opacity: 0 });
+      tl.current.to(elId, 2, { opacity: 1 });
+    }
+    tl.current.eventCallback("onComplete", boxesHeaderRandom);
+  }
+
+  function boxesHeaderFade(id) {
+    console.log(id);
+
+    tl2.current = new TimelineMax();
+    let elId = "#nameImage__container--box--" + id;
+    tl2.current.to(elId, 1.5, { opacity: 0 });
+    tl2.current.to(elId, 1.5, { opacity: 1 });
+  }
+
+  useEffect(() => {
+    boxesHeaderRandom();
+  });
+
+  function introText() {
+    const blurbs = intro.blurbs;
+    const introText = blurbs.map((b, index) => (
       <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
+        className="infoCard homepageMain__Card homepageMain__Card--blurb"
+        key={index}
       >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
+        <h3>{b.text}</h3>
       </div>
-    </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+    ));
+    return introText;
+  }
+
+  function generateImageBoxes(num) {
+    const imageBoxes = [];
+    for (let index = 0; index < num; index++) {
+      imageBoxes.push(
+        <div
+          key={index}
+          className="nameImage__container--box"
+          onMouseOver={boxesHeaderFade(index + 1)}
+          id={`nameImage__container--box--${index + 1}`}
+        />
+      );
+    }
+    return imageBoxes;
+  }
+
+  return (
+    <React.Fragment>
+      <header>
+        <div className="graphic__container">
+          <div className="nameImage__container"></div>
+          {generateImageBoxes(28)}
+        </div>
+        <div className="name__container">
+          <div className="nameSpacer"></div>
+          <div className="firstName__container">
+            <h1 className="firstName">{heading1}</h1>
+          </div>
+          <div className="lastName__container">
+            <h1 className="bigTitle">{heading2}</h1>
+          </div>
+          <Tagline />
+        </div>
+      </header>
+      <main>
+        <div className="homepageMain__grid">
+          <span className="homepageMain__spacer--half"></span>
+          <div className="homepageMain__Card homepageMain__Card--links">
+            <h3 className="homepageMain__link">
+              <a href="projects.html">Projects I've Done</a>
+            </h3>
+            <h3 className="homepageMain__link">
+              <a href="about.html">About Me</a>
+            </h3>
+            <h3 className="homepageMain__link">
+              <a href="contact.html">Contact Me</a>
+            </h3>
+          </div>
+          <span className="homepageMain__spacer--half"></span>
+          {introText()}
+
+          <span className="homepageMain__spacer2"></span>
+          <div className="infoCard homepageMain__Card homepageMain__ToolsContainer homepageMain__content--whatIUse">
+            <h2 className="">My Favorite Tools</h2>
+            <ul className="noList noListBlock homepageMain__ToolsList">
+              {toolDisplay()}
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
-  </div>
-)
+      </main>
+    </React.Fragment>
+  );
+};
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  images: PropTypes.array,
   title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
+  heading1: PropTypes.string,
+  heading2: PropTypes.string,
+  subheadings: PropTypes.array,
   description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array,
+    blurbs: PropTypes.array
   }),
-}
+  tools: PropTypes.array
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
+        backgrounds={frontmatter.backgrounds}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
+        heading1={frontmatter.heading1}
+        heading2={frontmatter.heading2}
+        subheadings={frontmatter.subheadings}
+        tools={frontmatter.tools}
         intro={frontmatter.intro}
       />
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
-}
+      frontmatter: PropTypes.object
+    })
+  })
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
+        backgrounds {
+          link
         }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
+        heading1
+        heading2
+        subheadings {
+          text
         }
-        description
         intro {
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
             text
           }
-          heading
-          description
+        }
+        tools {
+          name
+          icon
+          link
         }
       }
     }
   }
-`
+`;

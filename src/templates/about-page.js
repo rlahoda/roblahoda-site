@@ -31,7 +31,7 @@ export const AboutPageTemplate = ({
           <img
             className="aboutPicture"
             src={`${withPrefix("/")}${aboutPhoto}`}
-            alt="A photo of me"
+            alt="Me"
           />
         </div>
       </div>

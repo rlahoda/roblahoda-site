@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
-import { withPrefix } from "gatsby";
+import { HTMLContent } from "../components/Content";
 import SvgTwitter from "../components/svg/Twitter";
 import SvgGithub from "../components/svg/Github";
 import SvgEmail from "../components/svg/Email";
@@ -32,6 +31,8 @@ export const ContactPageTemplate = ({ title, subtitle, contactList }) => {
       case "linkedin": {
         return <SvgLinkedIn />;
       }
+      default:
+        break;
     }
   };
   console.log(title, subtitle, contactList);

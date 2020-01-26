@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import SvgEmail from "./svg/Email";
 import SvgTwitter from "./svg/Twitter";
 import SvgGithub from "./svg/Github";

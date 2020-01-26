@@ -44,20 +44,16 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
-          - {
-              label: Mainpitch,
-              name: mainpitch,
-              widget: object,
-              fields:
-                [
-                  { label: Title, name: title, widget: string },
-                  { label: Description, name: description, widget: text },
-                ],
+          - { label: Images, name: images, widget: list
+            field: {label: Image, name: image, widget: string}
+          }
+          - { label: Heading 1, name: heading1, widget: string }
+          - { label: Heading 2, name: heading2, widget: string }
+          - { label: Subheadings, name: subheading, widget: list 
+            fields:
+              - {label: Subheading, name: text, widget: text}
+              
             }
-          - { label: Description, name: description, widget: string }
           - {
               label: Intro,
               name: intro,
@@ -72,52 +68,22 @@ collections:
                     widget: list,
                     fields:
                       [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
+                        { label: Text, name: text, widget: string },
                       ],
                   },
                 ],
             }
           - {
-              label: Main,
-              name: main,
-              widget: object,
+              label: Tools,
+              name: tools,
+              widget: list,
               fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Image1,
-                    name: image1,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image2,
-                    name: image2,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                  {
-                    label: Image3,
-                    name: image3,
-                    widget: object,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Alt, name: alt, widget: string },
-                      ],
-                  },
-                ],
-            }
+                - { label: Name, name: name, widget: string}
+                - { label: Icon, name: icon, 
+                  widget: select,
+                    multiple: true,
+                    options: ["Atom","Babel","Codepen","Css3","CssGrid","Drupal","Drupal8","Email","Firefox","Flexbox","Git","Github","Greensock","Gulp","Html5","Illustrator","Javascript","Jest","Lando","Leaflet","Linkedin","Netlify","Npm","Pantheon","Paragraphs","PHP","React","Redux","Sass","Slack","Twig","Twitter","UiKit","VsCode","Wordpress","XD"]}
+                - { label: Link, name: link, widget: string }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -225,7 +191,7 @@ collections:
                     name: technology,
                     widget: select,
                     multiple: true,
-                    options: ["Atom","Babel","Codepen","Css3","CssGrid","Drupal","Email","Firefox","Flexbox","Git","Github","Greensock","Gulp","Html5","Illustrator","Javascript","Jest","Lando","Leaflet","Linkedin","Netlify","Npm","Pantheon","Paragraphs","PHP","React","Redux","Sass","Slack","Twig","Twitter","UiKit","VsCode","Wordpress","XD"]
+                    options: ["Atom","Babel","Codepen","Css3","CssGrid","Drupal","Drupal8","Email","Firefox","Flexbox","Git","Github","Greensock","Gulp","Html5","Illustrator","Javascript","Jest","Lando","Leaflet","Linkedin","Netlify","Npm","Pantheon","Paragraphs","PHP","React","Redux","Sass","Slack","Twig","Twitter","UiKit","VsCode","Wordpress","XD"]
                   },
                   {
                     label: Body Content,
