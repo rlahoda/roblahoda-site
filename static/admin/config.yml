@@ -44,8 +44,7 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: Images, name: images, widget: list
-            field: {label: Image, name: image, widget: string}
+          - { label: Images, name: images, widget: list, field: {label: Image, name: image, widget: string}
           }
           - { label: Heading 1, name: heading1, widget: string }
           - { label: Heading 2, name: heading2, widget: string }
