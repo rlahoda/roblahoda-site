@@ -78,13 +78,11 @@ export const IndexPageTemplate = ({
     tl.current.eventCallback("onComplete", boxesHeaderRandom);
   }
 
-  function boxesHeaderFade(id) {
-    console.log(id);
-
+  function boxesHeaderFade(event) {
+    const id = "#" + event.target.id;
     tl2.current = new TimelineMax();
-    let elId = "#nameImage__container--box--" + id;
-    tl2.current.to(elId, 1.5, { opacity: 0 });
-    tl2.current.to(elId, 1.5, { opacity: 1 });
+    tl2.current.to(id, 1.5, { opacity: 0 });
+    tl2.current.to(id, 1.5, { opacity: 1 });
   }
 
   useEffect(() => {
@@ -111,7 +109,7 @@ export const IndexPageTemplate = ({
         <div
           key={index}
           className="nameImage__container--box"
-          onMouseOver={boxesHeaderFade(index + 1)}
+          onMouseOver={boxesHeaderFade}
           id={`nameImage__container--box--${index + 1}`}
         />
       );
