@@ -49,10 +49,26 @@ collections:
               name: "images",
               widget: "list",
               required: false,
-              field: { label: "Image", name: "image", widget: "string" },
+              field:
+                {
+                  label: "Image",
+                  name: "image",
+                  required: false,
+                  widget: "string",
+                },
             }
-          - { label: "Heading 1", name: "heading1", widget: "string" }
-          - { label: "Heading 2", name: "heading2", widget: "string" }
+          - {
+              label: "Heading 1",
+              name: "heading1",
+              required: false,
+              widget: "string",
+            }
+          - {
+              label: "Heading 2",
+              name: "heading2",
+              required: false,
+              widget: "string",
+            }
           - {
               label: "Subheadings",
               name: "subheading",
@@ -83,7 +99,16 @@ collections:
                     label: Blurbs,
                     name: blurbs,
                     widget: list,
-                    fields: [{ label: Text, name: text, widget: string }],
+                    required: false,
+                    fields:
+                      [
+                        {
+                          label: Text,
+                          name: text,
+                          required: false,
+                          widget: string,
+                        },
+                      ],
                   },
                 ],
             }
@@ -91,14 +116,21 @@ collections:
               label: Tools,
               name: tools,
               widget: list,
+              required: false,
               fields:
                 [
-                  { label: "Name", name: "name", widget: "string" },
+                  {
+                    label: "Name",
+                    name: "name",
+                    required: false,
+                    widget: "string",
+                  },
                   {
                     label: Icon,
                     name: icon,
                     widget: select,
                     multiple: true,
+                    required: false,
                     options:
                       [
                         "Atom",
@@ -140,7 +172,7 @@ collections:
                         "XD",
                       ],
                   },
-                  { label: Link, name: link, widget: string },
+                  { label: Link, name: link, required: false, widget: string },
                 ],
             }
       - {
