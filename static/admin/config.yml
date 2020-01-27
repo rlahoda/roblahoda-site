@@ -71,10 +71,10 @@ collections:
             }
           - {
               label: "Subheadings",
-              name: "subheading",
+              name: "subheadings",
               widget: "list",
               required: false,
-              fields: [{ label: "Subheading", name: "string", widget: "text" }],
+              fields: [{ label: "Subheading", name: "text", widget: "string" }],
             }
           - {
               label: Intro,

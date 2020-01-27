@@ -21,6 +21,8 @@ export const IndexPageTemplate = ({
   let tl2 = useRef();
   // gsap.registerPlugin(TextPlugin, EasePack);
 
+  console.log(subheadings);
+
   function toolDisplay() {
     let toolsArr;
     if (tools.length > 0) {
@@ -186,7 +188,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading1={frontmatter.heading1}
         heading2={frontmatter.heading2}
-        subheadings={frontmatter.subheading}
+        subheadings={frontmatter.subheadings}
         tools={frontmatter.tools}
         intro={frontmatter.intro}
       />
@@ -211,7 +213,7 @@ export const pageQuery = graphql`
         title
         heading1
         heading2
-        subheading {
+        subheadings {
           text
         }
         intro {
