@@ -35,6 +35,7 @@ import SvgUiKit from "./UiKit";
 import SvgVsCode from "./VsCode";
 import SvgWordpress from "./Wordpress";
 import SvgXd from "./Xd";
+import SvgGatsby from "./Gatsby";
 
 function IconDisplay({ icon, styles, childProps }) {
   switch (icon) {
@@ -110,6 +111,8 @@ function IconDisplay({ icon, styles, childProps }) {
       return <SvgWordpress className={styles} {...childProps} />;
     case "XD":
       return <SvgXd className={styles} {...childProps} />;
+    case "Gatsby":
+      return <SvgGatsby className={styles} {...childProps} />;
     default:
       return "";
   }

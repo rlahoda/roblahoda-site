@@ -1,8 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
-import gsap from "gsap";
+import React, { useRef, useEffect } from "react";
+import gsap, { TimelineMax } from "gsap";
 import TextPlugin from "gsap/TextPlugin";
 import EasePack from "gsap/EasePack";
-import { TimelineMax } from "gsap";
 
 function Tagline() {
   let tl = useRef();
@@ -27,6 +26,7 @@ function Tagline() {
       let tagline = tagLines[i];
       tl.current.to("#indexTagline", {
         text: tagline,
+        ease: Linear.easeNone,
         delay: 2
       });
     }

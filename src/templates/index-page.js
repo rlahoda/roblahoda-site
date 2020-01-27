@@ -1,8 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
-import gsap from "gsap";
-import { TimelineMax } from "gsap";
+import gsap, { TimelineMax } from "gsap";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
@@ -87,7 +86,7 @@ export const IndexPageTemplate = ({
 
   useEffect(() => {
     boxesHeaderRandom();
-  });
+  }, []);
 
   function introText() {
     const blurbs = intro.blurbs;
