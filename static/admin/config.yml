@@ -47,7 +47,7 @@ collections:
           - {
               label: "Images",
               name: "images",
-              widget: "list",
+              widget: "list",required: false
               field: { label: "Image", name: "image", widget: "string" },
             }
           - { label: "Heading 1", name: "heading1", widget: "string" }
@@ -56,6 +56,7 @@ collections:
               label: "Subheadings",
               name: "subheading",
               widget: "list",
+              required: false
               field: { label: "Subheading", name: "text", widget: "text" },
             }
           - {
@@ -64,8 +65,8 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Heading, name: heading, widget: string ,required: false },
+                  { label: Description, name: description, widget: text,required: false },
                   {
                     label: Blurbs,
                     name: blurbs,
