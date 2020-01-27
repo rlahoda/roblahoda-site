@@ -64,6 +64,7 @@ collections:
               label: Intro,
               name: intro,
               widget: object,
+              required: false,
               fields:
                 [
                   {
