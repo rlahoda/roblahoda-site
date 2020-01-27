@@ -211,7 +211,7 @@ export const pageQuery = graphql`
         title
         heading1
         heading2
-        subheadings {
+        subheading {
           text
         }
         intro {
