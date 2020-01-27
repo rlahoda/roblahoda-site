@@ -8,7 +8,7 @@ function Tagline() {
 
   gsap.registerPlugin(TextPlugin, EasePack);
 
-  let tagLines = [
+  const tagLines = [
     "I Tell Stories",
     "I Theme In Drupal",
     "I Take Pictures",
@@ -26,7 +26,6 @@ function Tagline() {
       let tagline = tagLines[i];
       tl.current.to("#indexTagline", {
         text: tagline,
-        ease: Linear.easeNone,
         delay: 2
       });
     }
