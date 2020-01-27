@@ -183,7 +183,6 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        backgrounds={frontmatter.backgrounds}
         title={frontmatter.title}
         heading1={frontmatter.heading1}
         heading2={frontmatter.heading2}
@@ -210,9 +209,6 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        backgrounds {
-          link
-        }
         heading1
         heading2
         subheadings {
