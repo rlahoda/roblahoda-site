@@ -74,7 +74,7 @@ collections:
               name: "subheading",
               widget: "list",
               required: false,
-              fields: [{ label: "Subheading", name: "text", widget: "text" }],
+              fields: [{ label: "Subheading", name: "string", widget: "text" }],
             }
           - {
               label: Intro,

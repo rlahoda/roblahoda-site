@@ -131,7 +131,7 @@ export const IndexPageTemplate = ({
           <div className="lastName__container">
             <h1 className="bigTitle">{heading2}</h1>
           </div>
-          <Tagline />
+          <Tagline taglines={subheadings} />
         </div>
       </header>
       <main>
@@ -186,7 +186,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         heading1={frontmatter.heading1}
         heading2={frontmatter.heading2}
-        subheadings={frontmatter.subheadings}
+        subheadings={frontmatter.subheading}
         tools={frontmatter.tools}
         intro={frontmatter.intro}
       />

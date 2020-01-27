@@ -3,21 +3,12 @@ import gsap, { TimelineMax } from "gsap";
 import TextPlugin from "gsap/TextPlugin";
 import EasePack from "gsap/EasePack";
 
-function Tagline() {
+function Tagline(props) {
   let tl = useRef();
 
   gsap.registerPlugin(TextPlugin, EasePack);
 
-  const tagLines = [
-    "I Tell Stories",
-    "I Theme In Drupal",
-    "I Take Pictures",
-    "I'm A Visual Storyteller",
-    "I Make Videos",
-    "I Develop In React",
-    "I Like Pizza",
-    "I Build Websites"
-  ];
+  const tagLines = props.taglines;
 
   useEffect(() => {
     tl.current = new TimelineMax({ repeat: -1 });
