@@ -215,13 +215,14 @@ collections:
               {
                 label: Contact List,
                 name: contactList,
-                widget: object,
+                widget: list,
                 fields:
                   [
                     { label: Title, name: title, widget: string },
                     {
                       label: Icon,
                       name: icon,
+                      multiple: false,
                       widget: select,
                       options:
                         [
@@ -255,7 +256,7 @@ collections:
               {
                 label: Projects List,
                 name: projects,
-                widget: object,
+                widget: list,
                 fields:
                   [
                     { label: Title, name: title, widget: string },
