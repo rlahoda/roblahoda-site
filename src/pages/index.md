@@ -3,14 +3,8 @@ templateKey: index-page
 title: Rob Lahoda
 heading1: Rob
 heading2: 'LAHODA,'
-subheading:
-  - text: I theme In Drupal
-  - text: I Take Pictures
-  - text: I'm A Visual Storyteller
-  - text: I Make Videos
-  - text: I Develop In React
-  - text: I Like Pizza
-  - text: I Build Websites
+subheadings:
+  - text: I Like My Pup
 intro:
   blurbs:
     - text: |
