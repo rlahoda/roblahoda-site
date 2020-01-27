@@ -4,7 +4,7 @@ title: Rob Lahoda
 heading1: Rob
 heading2: LAHODA,
 subheading:
-  - I Build Websites
+  - text: I Build Websites
 intro:
   blurbs:
     - text: |
