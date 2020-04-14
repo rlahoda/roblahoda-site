@@ -2,7 +2,7 @@
 templateKey: index-page
 title: Rob Lahoda
 heading1: Rob
-heading2: "LAHODA,"
+heading2: 'LAHODA,'
 subheadings:
   - text: I theme In Drupal
   - text: I Take Pictures
@@ -13,9 +13,9 @@ subheadings:
   - text: I Build Websites
 intro:
   blurbs:
-    - text: |
-        I'm a front-end web developer based in central Ohio.
-        I work on all kinds of sites, but I especially love working with Drupal.
+    - text: >-
+        I'm a front-end web developer based in central Ohio.I work on all kinds
+        of sites, but I especially love working with React and Drupal.
     - text: >
         I've worked on projects large and small. I love building projects that
         tell stories and expose the user to information in an interesting and
@@ -41,57 +41,58 @@ tools:
   - icon: Javascript
     name: Javascript
   - icon: Drupal8
-    link: "https://www.drupal.org"
+    link: 'https://www.drupal.org'
     name: Drupal 8
   - icon: VsCode
-    link: "https://code.visualstudio.com"
+    link: 'https://code.visualstudio.com'
     name: VS Code
   - icon: Twig
-    link: "https://twig.symfony.com/"
+    link: 'https://twig.symfony.com/'
     name: Twig
   - icon: React
-    link: "https://reactjs.org/"
+    link: 'https://reactjs.org/'
     name: React
   - icon: Redux
-    link: "https://react-redux.js.org/"
+    link: 'https://react-redux.js.org/'
     name: Redux
   - icon: Greensock
-    link: "https://greensock.com/"
+    link: 'https://greensock.com/'
     name: Greensock
   - icon: Git
-    link: "https://git-scm.com/"
+    link: 'https://git-scm.com/'
     name: Git
   - icon: Github
-    link: "https://github.com/rlahoda"
+    link: 'https://github.com/rlahoda'
     name: Github
   - icon: Codepen
-    link: "https://codepen.io/rlahoda/"
+    link: 'https://codepen.io/rlahoda/'
     name: Codepen
   - icon: Jest
-    link: "https://jestjs.io"
+    link: 'https://jestjs.io'
     name: Jest
   - icon: Sass
-    link: "https://sass-lang.com/"
+    link: 'https://sass-lang.com/'
     name: SASS
   - icon: Gatsby
-    link: "https://www.gatsbyjs.org/"
+    link: 'https://www.gatsbyjs.org/'
     name: Gatsby JS
   - icon: Lando
-    link: "https://docs.devwithlando.io/"
+    link: 'https://docs.devwithlando.io/'
     name: Lando
   - icon: Gulp
-    link: "https://gulpjs.com/"
+    link: 'https://gulpjs.com/'
     name: Gulp
   - icon: Atom
-    link: "https://atom.io/"
+    link: 'https://atom.io/'
     name: Atom
   - icon: Paragraphs
-    link: "https://www.drupal.org/project/paragraphs"
+    link: 'https://www.drupal.org/project/paragraphs'
     name: Paragraphs Module
   - icon: Leaflet
-    link: "https://leafletjs.com/"
+    link: 'https://leafletjs.com/'
     name: Leaflet
   - icon: UiKit
-    link: "https://getuikit.com/"
+    link: 'https://getuikit.com/'
     name: UiIKit
 ---
+
