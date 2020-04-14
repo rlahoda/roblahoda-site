@@ -1,0 +1,332 @@
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
+
+media_folder: static/assets/images
+public_folder: /assets/images
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Images",
+              name: "images",
+              widget: "list",
+              required: false,
+              field:
+                {
+                  label: "Image",
+                  name: "image",
+                  required: false,
+                  widget: "string",
+                },
+            }
+          - {
+              label: "Heading 1",
+              name: "heading1",
+              required: false,
+              widget: "string",
+            }
+          - {
+              label: "Heading 2",
+              name: "heading2",
+              required: false,
+              widget: "string",
+            }
+          - {
+              label: "Subheadings",
+              name: "subheading",
+              widget: "list",
+              required: false,
+              fields: [{ label: "Subheading", name: "text", widget: "text" }],
+            }
+          - {
+              label: Intro,
+              name: intro,
+              widget: object,
+              required: false,
+              fields:
+                [
+                  {
+                    label: Heading,
+                    name: heading,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: text,
+                    required: false,
+                  },
+                  {
+                    label: Blurbs,
+                    name: blurbs,
+                    widget: list,
+                    required: false,
+                    fields:
+                      [
+                        {
+                          label: Text,
+                          name: text,
+                          required: false,
+                          widget: string,
+                        },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Tools,
+              name: tools,
+              widget: list,
+              required: false,
+              fields:
+                [
+                  {
+                    label: "Name",
+                    name: "name",
+                    required: false,
+                    widget: "string",
+                  },
+                  {
+                    label: Icon,
+                    name: icon,
+                    widget: select,
+                    multiple: false,
+                    required: false,
+                    options:
+                      [
+                        "Atom",
+                        "Babel",
+                        "Codepen",
+                        "Css3",
+                        "CssGrid",
+                        "Drupal",
+                        "Drupal8",
+                        "Email",
+                        "Firefox",
+                        "Flexbox",
+                        "Gatsby",
+                        "Git",
+                        "Github",
+                        "Greensock",
+                        "Gulp",
+                        "Html5",
+                        "Illustrator",
+                        "Javascript",
+                        "Jest",
+                        "Lando",
+                        "Leaflet",
+                        "Linkedin",
+                        "Netlify",
+                        "Npm",
+                        "Pantheon",
+                        "Paragraphs",
+                        "PHP",
+                        "React",
+                        "Redux",
+                        "Sass",
+                        "Slack",
+                        "Twig",
+                        "Twitter",
+                        "UiKit",
+                        "VsCode",
+                        "Wordpress",
+                        "XD",
+                      ],
+                  },
+                  { label: Link, name: link, required: false, widget: string },
+                ],
+            }
+      - {
+          file: "src/pages/about/index.md",
+          label: "About",
+          name: "about",
+          fields:
+            [
+              {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "about-page",
+              },
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Subtitle", name: "subtitle", widget: "string" },
+              {
+                label: "Photo",
+                name: aboutPhoto,
+                required: false,
+                widget: image,
+              },
+              { label: "Body", name: "body", widget: "markdown" },
+            ],
+        }
+      - {
+          file: "src/pages/contact/index.md",
+          label: "Contact",
+          name: "contact",
+          fields:
+            [
+              {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "contact-page",
+              },
+              { label: Title, name: title, widget: string },
+              { label: Subtitle, name: subtitle, widget: string },
+              {
+                label: Contact List,
+                name: contactList,
+                widget: object,
+                fields:
+                  [
+                    { label: Title, name: title, widget: string },
+                    {
+                      label: Icon,
+                      name: icon,
+                      widget: select,
+                      options:
+                        [
+                          "email",
+                          "twitter",
+                          "github",
+                          "codepen",
+                          "drupal",
+                          "linkedin",
+                        ],
+                    },
+                    { label: Link, name: link, widget: string },
+                  ],
+              },
+            ],
+        }
+      - {
+          file: "src/pages/projects/index.md",
+          label: "Projects",
+          name: "projects",
+          fields:
+            [
+              {
+                label: "Template Key",
+                name: "templateKey",
+                widget: "hidden",
+                default: "projects-page",
+              },
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Subtitle", name: "subtitle", widget: "string" },
+              {
+                label: Projects List,
+                name: projects,
+                widget: object,
+                fields:
+                  [
+                    { label: Title, name: title, widget: string },
+                    { label: Link Title, name: linktitle, widget: string },
+                    { label: Link Address, name: linkaddress, widget: string },
+                    { label: Alert Info, name: alert, widget: string },
+                    { label: Github Title, name: githubTitle, widget: string },
+                    {
+                      label: Github Address,
+                      name: githubaddress,
+                      widget: string,
+                    },
+                    {
+                      label: Width,
+                      name: width,
+                      widget: select,
+                      options: ["wide", "med", "normal"],
+                    },
+                    {
+                      label: Technologies,
+                      name: technology,
+                      widget: select,
+                      multiple: true,
+                      options:
+                        [
+                          "Atom",
+                          "Babel",
+                          "Codepen",
+                          "Css3",
+                          "CssGrid",
+                          "Drupal",
+                          "Drupal8",
+                          "Email",
+                          "Firefox",
+                          "Flexbox",
+                          "Gatsby",
+                          "Git",
+                          "Github",
+                          "Greensock",
+                          "Gulp",
+                          "Html5",
+                          "Illustrator",
+                          "Javascript",
+                          "Jest",
+                          "Lando",
+                          "Leaflet",
+                          "Linkedin",
+                          "Netlify",
+                          "Npm",
+                          "Pantheon",
+                          "Paragraphs",
+                          "PHP",
+                          "React",
+                          "Redux",
+                          "Sass",
+                          "Slack",
+                          "Twig",
+                          "Twitter",
+                          "UiKit",
+                          "VsCode",
+                          "Wordpress",
+                          "XD",
+                        ],
+                    },
+                    {
+                      label: Body Content,
+                      name: paragraphs,
+                      widget: list,
+                      fields: [{ label: Text, name: text, widget: text }],
+                    },
+                  ],
+              },
+            ],
+        }

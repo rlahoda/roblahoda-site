@@ -20,6 +20,7 @@ export const ProjectsPageTemplate = ({ title, subtitle, projects }) => {
           width = "";
           break;
       }
+      console.log(p);
 
       let technology = p.technology.map(t => {
         return (
@@ -49,8 +50,7 @@ export const ProjectsPageTemplate = ({ title, subtitle, projects }) => {
               href={p.linkaddress}
               // onclick="trackOutboundLink('{{ project.linkaddress }}'); return false;"
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               {p.linktitle}
             </a>
           </h4>
@@ -61,8 +61,7 @@ export const ProjectsPageTemplate = ({ title, subtitle, projects }) => {
                 href={p.githubaddress}
                 //  onclick="trackOutboundLink('{{ project.githubaddress }}'); return false;"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 {p.githubTitle ? p.githubTitle : "View Github Repo"}
               </a>
             </h5>
