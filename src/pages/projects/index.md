@@ -36,8 +36,8 @@ projects:
     linktitle: roblahoda.com
     linkaddress: http://www.roblahoda.com/?utm_source=github&utm_medium=github_pages&utm_campaign=github_projects&utm_content=projects
     trackingaddress: roblahoda.com
-    githubaddress: https://github.com/rlahoda/rlahoda.github.io
-    githubtracking: https://github.com/rlahoda/rlahoda.github.io
+    githubaddress: https://github.com/rlahoda/roblahoda-site
+    githubtracking: https://github.com/rlahoda/roblahoda-site
     width: normal
     paragraphs:
       - text: >
