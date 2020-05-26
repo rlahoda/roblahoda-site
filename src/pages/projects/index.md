@@ -31,7 +31,7 @@ projects:
       - Sass
       - Flexbox
       - Netlify
-    - roblahoda:
+  - roblahoda:
     title: Rob Lahoda • Web Developer
     linktitle: roblahoda.com
     linkaddress: http://www.roblahoda.com/?utm_source=github&utm_medium=github_pages&utm_campaign=github_projects&utm_content=projects
