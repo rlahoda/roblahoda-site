@@ -20,7 +20,6 @@ export const ProjectsPageTemplate = ({ title, subtitle, projects }) => {
           width = "";
           break;
       }
-      console.log(p);
 
       let technology = p.technology.map(t => {
         return (
@@ -94,7 +93,7 @@ ProjectsPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   aboutPhoto: PropTypes.string,
-  content: PropTypes.string
+  content: PropTypes.string,
 };
 
 const ProjectsPage = ({ data }) => {
@@ -115,7 +114,7 @@ const ProjectsPage = ({ data }) => {
 };
 
 ProjectsPage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 
 export default ProjectsPage;

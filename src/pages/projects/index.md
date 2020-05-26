@@ -31,6 +31,23 @@ projects:
       - Sass
       - Flexbox
       - Netlify
+    - roblahoda:
+    title: Rob Lahoda • Web Developer
+    linktitle: roblahoda.com
+    linkaddress: http://www.roblahoda.com/?utm_source=github&utm_medium=github_pages&utm_campaign=github_projects&utm_content=projects
+    trackingaddress: roblahoda.com
+    githubaddress: https://github.com/rlahoda/rlahoda.github.io
+    githubtracking: https://github.com/rlahoda/rlahoda.github.io
+    width: normal
+    paragraphs:
+      - text: >
+          This is the site you are currently viewing. It is build on Gatsby.js for content management and hosted on Netlify for continuious delivery from Github. The animation is done with Greensock Animation Platform (GSAP) and the layout is in CSS Grid with a Flexbox fallback. The icons are inline SVG inserted dynamically using Javascript.
+    technology:
+      - Javascript
+      - Greensock
+      - CssGrid
+      - Netlify
+      - Gatsby
   - myvacationmap:
     title: My Vacation Map
     linktitle: myvacationmap.com
@@ -137,22 +154,6 @@ projects:
     technology:
       - React
       - Javascript
-  - roblahoda:
-    title: Rob Lahoda • Web Developer
-    linktitle: roblahoda.com
-    linkaddress: http://www.roblahoda.com/?utm_source=github&utm_medium=github_pages&utm_campaign=github_projects&utm_content=projects
-    trackingaddress: roblahoda.com
-    githubaddress: https://github.com/rlahoda/rlahoda.github.io
-    githubtracking: https://github.com/rlahoda/rlahoda.github.io
-    width: normal
-    paragraphs:
-      - text: >
-          This is my personal website. It's built using Twig templating combined with JSON data and Markdown files for blog content. The site is hosted on Netlify for continuious delivery from Github. The animation is done with Greensock Animation Platform (GSAP) and the layout is in CSS Grid with a Flexbox fallback. The icons are inline SVG inserted dynamically using Javascript.
-    technology:
-      - Javascript
-      - Greensock
-      - CssGrid
-      - Netlify
   - hia:
     title: Heritage Insurance Advisors
     linktitle: hia-oh.com
