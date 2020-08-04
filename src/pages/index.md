@@ -14,25 +14,21 @@ subheadings:
 intro:
   blurbs:
     - text: >-
-        I'm a front-end web developer based in central Ohio.I work on all kinds
+        I'm a front-end web developer based in central Ohio. I work on all kinds
         of sites, but I especially love working with React and Drupal.
     - text: >
         I've worked on projects large and small. I love building projects that
         tell stories and expose the user to information in an interesting and
         engaging way.
-    - text: >
+    - text: >-
         Being a part of the Drupal community is important to me. I've been to
-        [Drupalcamp PA](http://drupalcamppa.net/), I'm a member of the [Drupal
-        Association](https://www.drupal.org/association), and I try to
-        contribute and share the knowledge I have with others.
+        Drupalcamp PA, Drupalcamp Asheville, I'm a member of the Drupal
+        Association, and I try to contribute and share the knowledge I have with
+        others.
     - text: >
         When I'm not working on projects, I love cycling, traveling, spending
         time with my family, and expanding my knowledge of web development.
-    - text: >
-        I'm not just a developer, I'm also a photographer and videographer.
-
-        Check out my portfolio at
-        [media.roblahoda.com](http://media.roblahoda.com.
+    - text: 'I''m not just a developer, I''m also a photographer and videographer.'
 tools:
   - icon: Html5
     name: HTML5
