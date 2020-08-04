@@ -59,11 +59,11 @@ projects:
     width: wide
     paragraphs:
       - text: >
-          Have you ever been preparing for a trip and found a bunch of cool places to visit, only to not know where to keep that information so that it's easily accessable when you're out and about? My Vacation Map is a custom mapping app that is built on React and using the Leaflet mapping library to solve this problem.
+          Have you ever been preparing for a trip and found a bunch of cool places to visit, only to not know where to keep that information so that it's easily accessible when you're out and about? My Vacation Map is a custom mapping app that is built in React and using the Leaflet mapping library to solve this problem.
       - text: >
           The app allows the user to add points onto the map with various information that the user would like to keep about that location. These can be personal notes, information from guidebooks, links to a website about that location, or many other possibilities. The user is able to add a category that will determine the icon and color of the map point for easier identification while reviewing their points. The app also is able to use geolocation to find the user's current location and even follow them as they move.
       - text: >
-          My Vacation Map is built React with Redux for state management, the React-Leaflet component library for managing the Leaflet mapping, and the React-Geolocated component for geolocation. For data managemnet, there is a Drupal 8 back-end connected via REST and JSON Api end points as well as the Simple Oauth module for Oauth2 authentication management.
+          My Vacation Map is built React with Redux for state management, the React-Leaflet component library for managing the Leaflet mapping, and the React-Geolocated component for geolocation. For data management, there is a Drupal 8 back-end connected via REST and JSON Api end points as well as the Simple Oauth module for Oauth2 authentication management.
       - text: >
           For API management, custom Redux middleware was written to allow simplified triggering of complex events through components. Unit tests are written in Jest with Enzyme.
     technology:
