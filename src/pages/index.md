@@ -22,9 +22,9 @@ intro:
         engaging way.
     - text: >-
         Being a part of the Drupal community is important to me. I've been to
-        Drupalcamp PA, Drupalcamp Asheville, I'm a member of the Drupal
-        Association, and I try to contribute and share the knowledge I have with
-        others.
+        Drupalcamp PA and attended Drupalcamp Asheville virtually, I'm a member
+        of the Drupal Association, and I try to contribute and share the
+        knowledge I have with others.
     - text: >
         When I'm not working on projects, I love cycling, traveling, spending
         time with my family, and expanding my knowledge of web development.
