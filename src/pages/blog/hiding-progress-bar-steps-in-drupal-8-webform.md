@@ -13,7 +13,7 @@ I was recently working on a client site in Drupal 8 that involved a [multi-step 
 
 The default progress bar is a series of circles with the number of the step on them and the label for the step underneath.
 
-![](/assets/img/blog/webform-default-progressbar.jpg)
+![](/assets/images/blog/webform-default-progressbar.jpg)
 
 Using built-in conditional logic I am able to hide pages or reveal pages as the user progresses based on their choice of Auto or Homeowner's. The problem is that hitting "next" would mean the user sees all of the steps but doesn't use them. While I recognize there is the possibility of user confusion for the progress bar to be changing throughout the process, I think there would be more confusion for the user to see steps showing that they've been visited when the user hasn't actually visited them.
 
@@ -32,7 +32,7 @@ So to make this work we had to accomplish a few things:
 
 Step 1 was to give each page marker a unique identifier that would allow us to do something with them later. This was taken care of in the Twig template for the form. In my case, the form is called "Get A Quote" so we went to the file: `/modules/webform/templates/webform-progress-tracker.html.twig` and copied it into my `mytheme/templates/webform` directory (if you don't have that directory in your theme files, just create it). Then we renamed it: `webform-progress-tracker--get-a-quote.html.twig` to ensure that it would be used for this specific form. If you're not familiar with template hints when you're theme building check out [this article about setting up your local dev environment](https://www.drupal.org/docs/8/theming/twig/debugging-twig-templates). Looking at the default template file there already is a unique identifier for each page set as a value in a span: `<span class="progress-marker">{{ index + 1 }}</span>`. When you look at the default progress bar, you can see this showing up as a number in a circle:
 
-![](/assets/img/blog/webform-closeup-marker-progressbar.jpg)
+![](/assets/images/blog/webform-closeup-marker-progressbar.jpg)
 
 So I basically want this number to be used in adding a CSS class to each marker to designate its step in the line. Fortunately, it's really easy to just copy the Twig code and reuse it for creating a CSS class.
 
@@ -116,7 +116,7 @@ if ($form_id == 'webform_submission_get_a_quote_add_form') {
 
 Next, we need to look at the form itself and see what checkbox set we want to use to base it off and get the machine name for it. For mine it's "what*kind_of_insurance_are_you_looking_for*".
 
-![](/assets/img/blog/webform-checkbox-name-progressbar.jpg)
+![](/assets/images/blog/webform-checkbox-name-progressbar.jpg)
 
 So we want to get this value and assign it to a variable that we'll call \$checkbox: `getValue('what_kind_of_insurance_are_you_looking_for_');`.
 
