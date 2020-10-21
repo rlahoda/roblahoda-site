@@ -38,4 +38,4 @@ At some point down the line, I'd really like to automate the data ingest process
 
 There are other things I'd like to do, but these are the main ones. There are a lot of things that I need to work through and figure out about how to structure the data and I need to work out the design, but those are parts of the next steps.
 
-If you want to follow along with my progress, you can see the [full list of tagged posts](/tags/cyclingStats/).
+If you want to follow along with my progress, you can see the [full list of tagged posts](/tags/cycling-stats/).

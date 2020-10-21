@@ -68,4 +68,4 @@ So taking all this into consideration, here's my content types and the various f
 
 If you have any suggestions or ideas for how these can be improved, feel free to reach out to me through any of my social media or other contact methods that you can find at the bottom of this page!
 
-If you want to follow along with my progress, you can see the [full list of tagged posts](/tags/cyclingStats/).
+If you want to follow along with my progress, you can see the [full list of tagged posts](/tags/cycling-stats/).
