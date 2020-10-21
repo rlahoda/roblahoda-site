@@ -6,6 +6,7 @@ date: 2020-10-20T00:00:00.000Z
 description: "IMDB" for cycling is a pretty lofty goal, but one that comes to mind when I think of my new project that I'm working on.
 tags:
   - Drupal
+  - Projects
 ---
 
 "IMDB" for cycling is a pretty lofty goal, but one that comes to mind when I think of my new project that I'm working on. I call it "CyclingStats" and my goal is to create a site that compiles results from all kinds of worldwide cycling events to give information and insights about races, teams, and racers. I'll admit this is a very daunting goal and far beyond my capabilities, but the goal is to make a site that I can have fun with, reflects my love of professional cycling, and gives me another fun Drupal project to work on.
