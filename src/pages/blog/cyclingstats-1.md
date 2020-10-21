@@ -7,6 +7,7 @@ description: IMDB for cycling is a pretty lofty goal, but one that comes to mind
 tags:
   - Drupal
   - Projects
+  - CyclingStats
 ---
 
 "IMDB" for cycling is a pretty lofty goal, but one that comes to mind when I think of my new project that I'm working on. I call it "CyclingStats" and my goal is to create a site that compiles results from all kinds of worldwide cycling events to give information and insights about races, teams, and racers. I'll admit this is a very daunting goal and far beyond my capabilities, but the goal is to make a site that I can have fun with, reflects my love of professional cycling, and gives me another fun Drupal project to work on.
@@ -36,3 +37,5 @@ One of the other things I really love is mapping. So having the route mapped out
 At some point down the line, I'd really like to automate the data ingest process as much as possible. The initial version of this will probably just be something like a Javascript interface that allows the user to paste in CSV data or JSON that's then ingested using the JSON API but I'd really like to find or build an import module that will allow for various types of importing formats and automatically linking the data. Ideally it would be able to give the user the ability to designate a race and stage, if applicable, then the importing would connect the data ingested with the appropriate racer and team as is goes through the various lines of results.
 
 There are other things I'd like to do, but these are the main ones. There are a lot of things that I need to work through and figure out about how to structure the data and I need to work out the design, but those are parts of the next steps.
+
+If you want to follow along with my progress, you can see the [full list of tagged posts](/tags/cyclingStats/).
