@@ -1,9 +1,9 @@
 ---
 templateKey: blog-post
-title: CyclingStats - 1
+title: CyclingStats Part 1
 author: Rob Lahoda
 date: 2020-10-20T00:00:00.000Z
-description: "IMDB" for cycling is a pretty lofty goal, but one that comes to mind when I think of my new project that I'm working on.
+description: IMDB for cycling is a pretty lofty goal, but one that comes to mind when I think of my new project that I'm working on.
 tags:
   - Drupal
   - Projects
